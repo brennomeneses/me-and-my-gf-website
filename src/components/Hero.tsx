@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
     <section id="hero" aria-label="Hero">
       <div className="hero-bg" />
       <div className="hero-content">
-        <h1>You & Me</h1>
+        <h1>Eu & Vose {"<3"}</h1>
         <p>Um pequeno museu dos nossos dias</p>
       </div>
       <div className="hearts" aria-hidden="true">

@@ -18,6 +18,7 @@ const DaysCounter: React.FC = () => {
 
   return (
     <section id="days" aria-label="Dias juntos">
+      <h1 className="header-card">Me aturando a:</h1>
       <div className="days-card">
         <div className="days-item">
           <div className="num">{days}</div>
