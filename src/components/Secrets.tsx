@@ -1,20 +1,29 @@
-import React, { useState } from 'react'
+// src/components/Secrets.tsx
+import React from 'react';
+import { useSecretInput } from '../hooks/useSecret';
+import { handle } from '../services/secrets';
 
 const Secrets: React.FC = () => {
-  const [value, setValue] = useState('')
+  // Caso você queira um comportamento diferente de log, basta substituir o callback aqui.
+  const { bind, handleSubmit } = useSecretInput('', (value) => {
+    // Exemplo de ação personalizada (pode ser uma chamada a API, abertura de modal, etc.)
+    console.log('🕵️‍♂️  Descubra:', value);
+    handle(value);
+  });
 
   return (
     <section id="secrets" aria-label="Segredos">
-      <div className="secret-box">
+      {/* O <form> permite submeter tanto com click quanto com a tecla Enter */}
+      <form className="secret-box" onSubmit={handleSubmit}>
         <input
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
+          {...bind}
           placeholder="Digite um segredo..."
+          aria-label="Segredo"
         />
-        <button onClick={() => console.log('Descubra:', value)}>Descubra</button>
-      </div>
+        <button type="submit">Descubra</button>
+      </form>
     </section>
-  )
-}
+  );
+};
 
-export default Secrets
+export default Secrets;

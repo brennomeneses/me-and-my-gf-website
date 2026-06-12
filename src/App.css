@@ -188,18 +188,14 @@
 .custom-timeline {
   max-width: 800px;          /* <‑ ajuste ao seu gosto */
   width: 100%;               /* ocupa 100 % do max-width */
-
-  /* Centraliza horizontalmente */
-  margin: 0 auto;            /* remove o margin‑left:20% */
-
-  /* (Opcional) espaçamento interno */
-  padding: 0 1rem;
+  margin: 0 auto;            /* centraliza horizontalmente */
+  padding: 0 1rem;           /* (Opcional) espaçamento interno */
 
   img {
-    max-width: 250px;
+    max-width: 200px;         /* valor padrão (pode ser sobrescrito no mobile) */
     border-radius: 20px;
   }
-  
+
   .item {
     max-width: 600px;
   }
@@ -224,6 +220,23 @@
 
   .rs-timeline-item-content {
     margin: 0 -24px;
+  }
+}
+
+/* -------------------------------------------------
+   Media Query – Mobile (até 768 px de largura)
+   ------------------------------------------------- */
+@media (max-width: 768px) {
+  .custom-timeline {
+    /* Ajusta o padding do conteúdo */
+    .rs-timeline-item-content {
+      padding: 20px;          /* garante 20 px (pode ser mantido ou alterado) */
+    }
+
+    /* Limita a largura das imagens dentro do conteúdo */
+    .rs-timeline-item-content img {
+      max-width: 30vw;        /* 30 % da largura da viewport */
+    }
   }
 }
 #hero {

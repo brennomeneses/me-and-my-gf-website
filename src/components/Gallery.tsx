@@ -18,7 +18,7 @@ const Gallery: React.FC = () => {
             <h2>Fotos</h2>
             <div className="grid">
               {photos.map((p) => (
-                <img key={p} src={p} alt="Foto da galeria" />
+                <img key={p} src={"https://media.tenor.com/6oVpxIFwAAoAAAAM/cat-kiss.gif"} alt="Foto da galeria" />
               ))}
             </div>
             <div className="close">
